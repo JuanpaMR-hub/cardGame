@@ -24,11 +24,11 @@ function turn(card) {
     let passed = false;
     do {
         let answer = Number(prompt(`| ${card} |\n-----------------\n${deck}`));
-        if (deck.includes(answer) && (answer<card)) {
+        if (deck.includes(answer) && (answer<=card)) {
             passed = true;
             removeCards(answer);
 
-        }else if(deck.includes(answer) && (answer>=card)){
+        }else if(deck.includes(answer) && (answer>card)){
             alert("Ese numero es mayor o igual");
         } else if (answer == 0) {
             deck.push(randomPick());
@@ -71,9 +71,9 @@ function startGame() {
 alert("Bienvenido al Carecaca!")
 alert(`¿Como se juega?
 Se mostrará en pantalla un numero, debajo de este estará tu "mazo"
-El objetivo es elegir un carta mas baja de la que está presentada en pantalla
+El objetivo es elegir un carta mas baja o igual de la que está presentada en pantalla
 Ejemplo:
-Si en pantalla es un 8, necesitamos poner un 7 o cualquier numero bajo este`)
+Si en pantalla es un 8, necesitamos poner un 8 o cualquier numero bajo este`)
 alert("Otro dato importante!\nSi no tienes un numero que sea mas bajo, escriba 0 y sacarás otra carta")
 
 startGame();
